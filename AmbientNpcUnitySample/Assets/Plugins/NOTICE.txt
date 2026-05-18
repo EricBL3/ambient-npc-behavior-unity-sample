@@ -1,0 +1,8 @@
+Ambient NPC Behavior Framework
+Copyright 2026 Eric Buitron-Lopez
+
+This framework was developed as part of a Master's thesis in Computer Science
+at Western University, supervised by Dr. Roberto Solis-Oba.
+
+An associated paper has been accepted at the IEEE Conference on Games 2026.
+This notice will be updated with the full citation upon publication in proceedings.
