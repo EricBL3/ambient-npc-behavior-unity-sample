@@ -112,7 +112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c9bfeaed77703d543b03183cf4a8a2e2, type: 3}
       propertyPath: m_Name
-      value: meal_stand
+      value: meal_stand_
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -136,6 +136,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9bfeaed77703d543b03183cf4a8a2e2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6824993518134670995}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9bfeaed77703d543b03183cf4a8a2e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4524069160422202584}
   m_SourcePrefab: {fileID: 100100000, guid: c9bfeaed77703d543b03183cf4a8a2e2, type: 3}
 --- !u!4 &573539268820116451 stripped
 Transform:
@@ -182,6 +185,26 @@ MonoBehaviour:
     seatPosition: {fileID: 0}
   claimed: 
   claimedBy: []
+--- !u!114 &4524069160422202584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918257417332128089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1323229168562543681
 PrefabInstance:
   m_ObjectHideFlags: 0
