@@ -26,7 +26,6 @@ using Random = UnityEngine.Random;
 public class BehavioralEntity : BehavioralEntityBase, IAnimationEventReceiver
 {
     protected static readonly int SpeedParam = Animator.StringToHash("Speed");
-    protected static readonly int IdleVariantParam = Animator.StringToHash("IdleVariant");
 
     [Header("Character Components")]
     protected Animator animator;
@@ -48,7 +47,11 @@ public class BehavioralEntity : BehavioralEntityBase, IAnimationEventReceiver
     
     protected virtual void Awake()
     {
-        SelectRandomNpcVariant();
+        animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        movementTransform = gameObject.transform;
+        
+        animator?.SetFloat(SpeedParam, 0);
         
         actionExecutors = new Dictionary<Int32, IActionExecutor>();
         InitializeActionExecutors();
@@ -194,30 +197,6 @@ public class BehavioralEntity : BehavioralEntityBase, IAnimationEventReceiver
         yield return new WaitForSeconds(actionDurationMs / 1000f);
         CompleteCurrentAction();
     }
-    
-    private void SelectRandomNpcVariant()
-    {
-        var randomIndex = Random.Range(0, transform.childCount);
-        var selected = transform.GetChild(randomIndex);
-
-        for (int i = transform.childCount - 1; i >= 0; i--)
-        {
-            var child = transform.GetChild(i);
-
-            if (child != selected)
-            {
-                Destroy(child.gameObject);
-            }
-        }
-        
-        selected.gameObject.SetActive(true);
-        animator = selected.GetComponent<Animator>();
-        agent = selected.GetComponent<NavMeshAgent>();
-        movementTransform = selected.gameObject.transform;
-        
-        animator?.SetFloat(SpeedParam, 0);
-        animator?.SetFloat(IdleVariantParam, Random.Range(0f, 2.99f));
-    }
 
     private bool IsInLocomotionState()
     {
@@ -236,12 +215,6 @@ public class BehavioralEntity : BehavioralEntityBase, IAnimationEventReceiver
         
         var normalizedSpeed = agent.velocity.magnitude / agent.speed;
         animator.SetFloat(SpeedParam, normalizedSpeed);
-                
-        // randomize idle variant
-        if (normalizedSpeed < 0.1f && Random.value < 0.001f)
-        {
-            animator.SetFloat(IdleVariantParam, Random.Range(0f, 2.99f));
-        }
     }
     
     private void OnAnimationFinished()

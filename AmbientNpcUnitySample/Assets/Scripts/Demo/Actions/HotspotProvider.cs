@@ -22,9 +22,6 @@ using Random = UnityEngine.Random;
 public enum HotspotRole
 {
     All,
-    Customer,
-    Vendor,
-    Soldier
 }
 
 /// <summary>
@@ -76,12 +73,12 @@ public class HotspotProvider : MonoBehaviour
     }
     
     /// <summary>
-    /// Claims a random available customer hotspot (excludes vendor hotspots).
+    /// Claims a random available hotspot.
     /// Returns the hotspot definition, or null if none are available.
     /// </summary>
     public HotspotDefinition TryClaim(BehavioralEntity entity)
     {
-        return TryClaimWithRole(entity, HotspotRole.Customer);
+        return TryClaimWithRole(entity, HotspotRole.All);
     }
 
     /// <summary>
@@ -211,9 +208,6 @@ public class HotspotProvider : MonoBehaviour
                 Gizmos.color = def.role switch
                 {
                     HotspotRole.All => Color.green,
-                    HotspotRole.Customer => Color.orange,
-                    HotspotRole.Vendor => Color.cyan,
-                    HotspotRole.Soldier => Color.yellow,
                     _ => Gizmos.color
                 };
             }
