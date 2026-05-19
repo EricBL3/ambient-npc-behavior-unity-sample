@@ -1,0 +1,15 @@
+URLs to where to get the external assets found in this project:
+- Man model: https://quaternius.com/packs/ultimatemodularcharacters.html
+- Woman model: https://quaternius.com/packs/ultimatemodularwomen.html
+- Fountain: https://poly.pizza/m/WHc7dwttlk
+- Table: https://poly.pizza/m/VhhNCfQ8gj
+- Chair: https://poly.pizza/m/e9-mepLIq0X
+- Market Stand: https://poly.pizza/m/DGIM5HGISb
+- Bench: https://poly.pizza/m/dOSjmdmKaxi
+- Gazebo: https://poly.pizza/m/0cRW-BhHD16
+- Soda Can: https://poly.pizza/m/bGQOXKht8V1
+- Water Bottle: https://poly.pizza/m/b54HnwJAXsb
+- Sushi: https://poly.pizza/m/32GG7HAag6D
+- Festival Meal: https://poly.pizza/m/5DdyUv1lsLS
+
+All animations were downloaded from https://www.mixamo.com/
